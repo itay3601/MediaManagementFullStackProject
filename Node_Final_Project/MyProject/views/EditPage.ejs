@@ -1,0 +1,154 @@
+<html>
+  
+<h1>Edit User</h1>
+<form action="http://localhost:8000/UserPage/AllUser/Edit/<%= Ujason.FirstName   %> " method="POST">
+First Name :<input type="text" name="Fname" value="<%= Ujason.FirstName   %>" ><br>
+Last Name :<input type="text" name="Lname"  value="<%= Ujason.LastName   %>"  ><br>
+User Name :<input type="text" name="Uname"   value="<%= UserDb.UserName %>"><br>
+sessen timout (minutes) :<input type="text" name="Time"  value="<%= Ujason.SessionTimeOut   %>"><br>
+Create date : <input type="text" name="Date"  value="<%= Ujason.CreatedDate   %>"><br>
+premesshens :<br>
+
+
+<%  if(Pjason.permissions.includes("View Subscriptions")){ %>
+	
+	
+<input type="checkbox" name="View_Subscriptions"  checked><label>View Subscriptions</label><br>
+
+
+<% }else{ %>
+
+	<input type="checkbox" name="View_Subscriptions"  ><label>View Subscriptions</label><br>
+
+
+
+
+<% } %>
+<%  if(Pjason.permissions.includes("Create Subscriptions")){ %>
+	
+	
+	<input type="checkbox" name="Create_Subscriptions" checked><label>Create Subscriptions</label><br>
+	
+	
+	<% }else{ %>
+	
+		<input type="checkbox" name="Create_Subscriptions"><label>Create Subscriptions</label><br>
+	
+	
+	
+	
+	<% } %>
+<%  if(Pjason.permissions.includes("Delete Subscriptions")){ %>
+	
+	
+	<input type="checkbox" name="Delete_Subscriptions" checked><label>Delete Subscriptions</label><br>
+	
+	
+	<% }else{ %>
+	
+		<input type="checkbox" name="Delete_Subscriptions"><label>Delete Subscriptions</label><br>
+	
+	
+	
+	
+	<% } %>
+	<%  if(Pjason.permissions.includes("Update Subscriptions")){ %>
+	
+	
+		<input type="checkbox" name="Update_Subscriptions" checked><label>Update Subscriptions</label><br>
+		
+		
+		<% }else{ %>
+		
+			<input type="checkbox" name="Update_Subscriptions"><label>Update Subscriptions</label><br>
+		
+		
+		
+		
+		<% } %>
+		<%  if(Pjason.permissions.includes("View Movies")){ %>
+	
+	
+			<input type="checkbox" name="View_Movies" checked ><label>View Movies</label><br>
+			
+			
+			<% }else{ %>
+			
+				<input type="checkbox" name="View_Movies" ><label>View Movies</label><br>
+			
+			
+			
+			
+			<% } %>
+			<%  if(Pjason.permissions.includes("Create Movies")){ %>
+	
+	
+				<input type="checkbox" name="Create_Movies" checked><label>Create Movies</label><br>
+				
+				
+				<% }else{ %>
+				
+					<input type="checkbox" name="Create_Movies"><label>Create Movies</label><br>
+				
+				
+				
+				
+				<% } %>
+				<%  if(Pjason.permissions.includes("Delete Movies")){ %>
+	
+	
+					<input type="checkbox" name="Delete_Movies" checked><label>Delete Movies</label><br>
+					
+					
+					<% }else{ %>
+					
+						<input type="checkbox" name="Delete_Movies"><label>Delete Movies</label><br>
+					
+					
+					
+					
+					<% } %>
+					<%  if(Pjason.permissions.includes("Update Movies")){ %>
+	
+	
+						<input type="checkbox"name="Update_Movies" checked><label>Update Movies</label><br><br>
+						
+						
+						<% }else{ %>
+						
+							<input type="checkbox"name="Update_Movies"><label>Update Movies</label><br><br>
+						
+						
+						
+						
+						<% } %>
+
+						<input type="submit" value="Save">
+                        </form>
+
+						</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

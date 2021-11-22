@@ -1,0 +1,283 @@
+<html>
+    <style>
+        
+        * {
+	 -webkit-font-smoothing: antialiased;
+	 -moz-osx-font-smoothing: grayscale;
+}
+ body {
+	 background-color: salmon;
+}
+ .container {
+	 width: 80%;
+	 min-height: 100vh;
+	 display: -webkit-box;
+	 display: -ms-flexbox;
+	 display: flex;
+	 -ms-flex-wrap: wrap;
+	 flex-wrap: wrap;
+	 margin-left: auto;
+	 margin-right: auto;
+}
+ .center {
+	 -webkit-box-align: center;
+	 -ms-flex-align: center;
+	 align-items: center;
+	 -webkit-box-pack: center;
+	 -ms-flex-pack: center;
+	 justify-content: center;
+}
+ .card {
+	 background-color: white;
+	 width: 250px;
+	 min-height: 300px;
+	 display: -webkit-box;
+	 display: -ms-flexbox;
+	 display: flex;
+	 -webkit-box-orient: vertical;
+	 -webkit-box-direction: normal;
+	 -ms-flex-direction: column;
+	 flex-direction: column;
+	 padding: 20px;
+	 margin: 5px;
+	 
+	 border-radius: 10px;
+	/* Safari 4.0 - 8.0 */
+	 -webkit-animation-duration: 1.5s;
+	/* Safari 4.0 - 8.0 */
+	
+	 animation-duration: 1.5s;
+	 -webkit-transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
+	 -o-transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
+	 transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
+	/* custom */
+}
+ .card h1, .card h2, .card h3, .card h4, .card h5 {
+	 margin: 0px;
+	 padding: 0px 0px 15px 0px;
+	 font-family: 'Noto Sans KR', sans-serif;
+	 font-size: 30px;
+	 color: #282828;
+}
+ .card hr {
+	 display: block;
+	 border: none;
+	 height: 3px;
+	 background-color: salmon;
+	 margin: 0px;
+	 -webkit-animation-name: line-show;
+	/* Safari 4.0 - 8.0 */
+	 -webkit-animation-duration: 0.3s;
+	/* Safari 4.0 - 8.0 */
+	 animation-name: line-show;
+	 animation-duration: 0.3s;
+	 -webkit-transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
+	 -o-transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
+	 transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
+	/* custom */
+}
+ .card p {
+	 margin: 15px 0px 0px 0px;
+	 font-family: 'Noto Sans KR', sans-serif;
+	 font-weight: 100;
+	 letter-spacing: -0.25px;
+	 line-height: 1.25;
+	 font-size: 16px;
+	 word-break: break-all;
+	 word-wrap: pre-wrap;
+	 color: #282828;
+	 -webkit-animation-name: p-show;
+	/* Safari 4.0 - 8.0 */
+	 -webkit-animation-duration: 1.5s;
+	/* Safari 4.0 - 8.0 */
+	 animation-name: p-show;
+	 animation-duration: 1.5s;
+}
+ 
+/* Safari 4.0 - 8.0 */
+ @-webkit-keyframes line-show {
+	 from {
+		 margin: 0px 100px;
+	}
+	 to {
+		 margin: 0px;
+	}
+}
+/* Standard syntax */
+ @keyframes line-show {
+	 from {
+		 margin: 0px 100px;
+	}
+	 to {
+		 margin: 0px;
+	}
+}
+/* Safari 4.0 - 8.0 */
+ @-webkit-keyframes p-show {
+	 from {
+		 color: white;
+	}
+	 to {
+		 color: #282828;
+	}
+}
+/* Standard syntax */
+ @keyframes p-show {
+	 from {
+		 color: white;
+	}
+	 to {
+		 color: #282828;
+	}
+}
+/* Safari 4.0 - 8.0 */
+ 
+ 
+   
+
+
+
+    </style>
+   
+  
+    <h1>Members</h1>
+    <% if(flag) { %>
+ <a href="AllMembers">All Users</a>
+<a href="AddMember">Add User</a>
+<h1>All Members</h1>
+<% let counter=0 %>
+
+
+<% Members.data.forEach(function(member){ %>
+    <div >
+        <% let butoonclick=false %>
+        <div class="card">
+          
+          <h2><%= member.Name %></h2>
+          <hr/>
+          Email : <%= member.Email %><br>
+          City :  <%= member.City %><br>
+		  <%if(Pro.includes("Update Subscriptions")&Pro.includes("Delete Subscriptions")){%>
+          <a href="http://localhost:8000/Subscriptions/AllMembers/Edits/<%=member.Name %>" >Edits</a>
+          <a href="http://localhost:8000/Subscriptions/AllMembers/Delete/<%=member._id %>" >Delete</a>
+
+        
+         
+          <br><br><br>
+		  <%}else if(Pro.includes("Update Subscriptions")){%>
+
+			<a href="http://localhost:8000/Subscriptions/AllMembers/Edits/<%=member.Name %>" >Edits</a>
+
+			<br><br><br>
+
+
+			<%}else if(Pro.includes("Delete Subscriptions")){%>
+				
+				<a href="http://localhost:8000/Subscriptions/AllMembers/Delete/<%=member._id %>" >Delete</a>
+
+				<br><br><br>
+
+				<%}%>
+         
+           <div style="background-color: cyan">
+            <label>Movie Watched</label><br>
+			<%if(Pro.includes("Create Subscriptions")){%>
+               
+                  <input type="button"  value="Subscribe on new movie" onclick="showDiv('<%= member._id %>')" />
+                  <div id="<%= member._id %>"  style="display:none;"  > 
+                    <label>add new movie</label> <br>
+                    <form action="AllMembers/SubscribeNewMovie" method="POST">
+                  
+                    <select name="movie" id="movie">
+                        <% Movies.data.forEach(function(movie){ %>
+                    <option value="<%= movie._id %>"><%= movie.Name %></option>
+                 
+                     
+                      <% }) %>
+                    </select>
+                      Date : <input type="text" name="date">
+                      <input type="hidden" value="<%= member._id %>" name="memberId">
+                      <input type="submit" value="Subscribe">
+                    </form>
+                   
+                   
+                
+                
+                
+                
+                </div>
+				<%}%>
+             
+           
+        </div>
+        <ul>
+        <% Sub.data[counter].Movies.forEach(function(mov){ %>
+            <li> <a href="http://localhost:8000/TestMoviePage/SerchMovies:inputSarch?inputSarch=<%=  mov.movieId %>"><%=    mov.movieId %></a> <%=mov.Date%></li>
+            <%}) %>
+         
+        </ul>
+        </div>
+      </div>
+      <script>
+
+        function showDiv(id) {
+           document.getElementById(id).style.display = "block";
+        }
+        
+        
+            </script>
+                    <% counter=counter+1 %>
+
+    
+   
+    
+    <%})%>
+    <% }else{ %>
+        <a href="AllMembers">All Users</a>
+        <a href="AddMember">Add User</a>
+
+
+        <h1>Add Members</h1>
+		<%if(Pro.includes("Create Subscriptions")){%>
+        <div class="card">
+          
+            <h2>Add new member</h2>
+            <hr/>
+            <form action="AddMember/submit" method="POST"><br>
+        Name  : <input type="text" name="Name"><br> <br>
+        Email : <input type="text" name="Email"><br> <br>
+        City   : <input type="text" name="City"><br> <br>
+        <input type="submit" value="Save"><br>
+         </form>
+
+  
+
+        </div>
+		<%}else{%>
+        <p>No prommishion to add Member</p>
+
+
+
+
+			<% }%>
+
+
+
+
+
+
+
+
+
+        <%}%>
+
+
+
+
+
+
+
+
+
+
+</html>

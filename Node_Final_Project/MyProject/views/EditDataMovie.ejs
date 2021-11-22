@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+    
+  </head>
+  <body>
+ 
+   
+        <h1>Edit Movie :<%= movieid.Name %></h1>
+        <%         let movieName=movieid.Name.replace(/\s+/g, '');          %>
+        <form action="/TestMoviePage/EditDataMovie/<%=movieName%> " method="POST">
+
+            <h2>Name :</h2><input type="text" name="Name" value="<%= movieid.Name %>"><br>
+        <h2>Ganer :</h2><input type="text"  name="Ganer" ><br>
+        <h2>Image url :</h2><input type="text"  name="Image" value="<%= movieid.Image %>"  ><br>
+        <h2>Pramierd :</h2><input type="text" name="Pramierd" value="<%= movieid.Premiered %>"><br>
+         <br><br>
+         <input type="submit" value="Update">
+
+
+        </form>
+        
+
+   
+  
+    <input type="submit" value="Censel">
+
+  </body>
+</html>

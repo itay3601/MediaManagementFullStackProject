@@ -1,0 +1,475 @@
+
+<html>
+<head>
+    <style>
+  /* ////////////////////////////////////////////////////////////////////////////////////////////kjkglf */
+
+
+
+
+
+
+
+
+
+
+
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800');
+ * {
+	 box-sizing: border-box;
+	 margin: 0;
+}
+ html, body {
+	 margin: 0;
+	 background: white;
+	 font-family: 'Montserrat', helvetica, arial, sans-serif;
+	 font-size: 14px;
+	 font-weight: 400;
+}
+ .link {
+	 display: block;
+	 text-align: center;
+	 color: #777;
+	 text-decoration: none;
+	 padding: 10px;
+}
+ .movie_card {
+	 position: relative;
+	 display: block;
+	 width: 800px;
+	 height: 350px;
+	 margin: 80px auto;
+	 overflow: hidden;
+	 border-radius: 10px;
+	 transition: all 0.4s;
+	 box-shadow: 0px 0px 120px -25px rgba(0, 0, 0, 0.5);
+}
+ .movie_card:hover {
+	 transform: scale(1.02);
+	 box-shadow: 0px 0px 80px -25px rgba(0, 0, 0, 0.5);
+	 transition: all 0.4s;
+}
+ .movie_card .info_section {
+	 position: relative;
+	 width: 100%;
+	 height: 100%;
+	 background-blend-mode: multiply;
+	 z-index: 2;
+	 border-radius: 10px;
+}
+ .movie_card .info_section .movie_header {
+	 position: relative;
+	 padding: 25px;
+	 height: 40%;
+}
+ .movie_card .info_section .movie_header h1 {
+	 color: black;
+	 font-weight: 400;
+}
+ .movie_card .info_section .movie_header h4 {
+	 color: #555;
+	 font-weight: 400;
+}
+ .movie_card .info_section .movie_header .minutes {
+	 display: inline-block;
+	 margin-top: 15px;
+	 color: #555;
+	 padding: 5px;
+	 border-radius: 5px;
+	 border: 1px solid rgba(0, 0, 0, 0.05);
+}
+ .movie_card .info_section .movie_header .type {
+	 display: inline-block;
+	 color: #959595;
+	 margin-left: 10px;
+}
+ .movie_card .info_section .movie_header .locandina {
+	 position: relative;
+	 float: left;
+	 margin-right: 20px;
+	 height: 120px;
+	 box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
+}
+ .movie_card .info_section .movie_desc {
+	 padding: 25px;
+	 height: 50%;
+}
+ .movie_card .info_section .movie_desc .text {
+	 color: #545454;
+   border: 1px solid black;
+
+}
+ .movie_card .info_section .movie_social {
+	 height: 10%;
+	 padding-left: 15px;
+	 padding-bottom: 20px;
+}
+ .movie_card .info_section .movie_social ul {
+	 list-style: none;
+	 padding: 0;
+}
+ .movie_card .info_section .movie_social ul li {
+	 display: inline-block;
+	 color: rgba(0, 0, 0, 0.3);
+	 transition: color 0.3s;
+	 transition-delay: 0.15s;
+	 margin: 0 10px;
+}
+ .movie_card .info_section .movie_social ul li:hover {
+	 transition: color 0.3s;
+	 color: rgba(0, 0, 0, 0.7);
+}
+ .movie_card .info_section .movie_social ul li i {
+	 font-size: 19px;
+	 cursor: pointer;
+}
+ .movie_card .blur_back {
+	 position: absolute;
+	 top: 0;
+	 z-index: 1;
+	 height: 100%;
+	 right: 0;
+	 background-size: cover;
+	 border-radius: 11px;
+}
+ @media screen and (min-width: 768px) {
+	 .movie_header {
+		 width: 65%;
+	}
+	 .movie_desc {
+		 width: 50%;
+	}
+	 .info_section {
+		 background: linear-gradient(to right, #e5e6e6 50%, transparent 100%);
+	}
+	 .blur_back {
+		 width: 80%;
+		 background-position: -100% 10% !important;
+	}
+}
+ @media screen and (max-width: 768px) {
+	 .movie_card {
+		 width: 95%;
+		 margin: 70px auto;
+		 min-height: 350px;
+		 height: auto;
+	}
+	 .blur_back {
+		 width: 100%;
+		 background-position: 50% 50% !important;
+	}
+	 .movie_header {
+		 width: 100%;
+		 margin-top: 85px;
+	}
+	 .movie_desc {
+		 width: 100%;
+	}
+	 .info_section {
+		 background: linear-gradient(to top, #e5e6e6 50%, transparent 100%);
+		 display: inline-grid;
+	}
+}
+ /* .bright_back {
+	 background: url("https://occ-0-2433-448.1.nflxso.net/art/cd5c9/3e192edf2027c536e25bb5d3b6ac93ced77cd5c9.jpg");
+} */
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      /* ////////////////////////////////////////////////////////////////////////////////////////////kjkglf */
+        @import url('https://fonts.googleapis.com/css?family=Arimo:400,700&display=swap');
+body{
+  background:#CDDC39;
+  font-family: 'Arimo', sans-serif;
+}
+h2{
+  color:#000;
+  text-align:center;
+  font-size:2em;
+}
+.warpper{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tab{
+  cursor: pointer;
+  padding:10px 20px;
+  margin:0px 2px;
+  background:#000;
+  display:inline-block;
+  color:#fff;
+  border-radius:3px 3px 0px 0px;
+  box-shadow: 0 0.5rem 0.8rem #00000080;
+}
+.panels{
+  background:#fffffff6;
+  box-shadow: 0 2rem 2rem #00000080;
+  min-height:500px;
+  width:100%;
+  max-width:1000px;
+  border-radius:3px;
+  overflow:hidden;
+  padding:20px;  
+}
+.panel{
+  display:none;
+  animation: fadein .8s;
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+.panel-title{
+  font-size:1.5em;
+  font-weight:bold
+}
+.radio{
+  display:none;
+}
+#one:checked ~ .panels #one-panel,
+#two:checked ~ .panels #two-panel,
+#three:checked ~ .panels #three-panel{
+  display:block
+}
+#one:checked ~ .tabs #one-tab,
+#two:checked ~ .tabs #two-tab,
+#three:checked ~ .tabs #three-tab{
+  background:#fffffff6;
+  color:#000;
+  border-top: 3px solid #000;
+}
+    </style>
+
+</head>
+<body>
+
+
+
+    <h2>Movies</h2>
+    <div class="warpper">
+      <% if(sarchSbmitFlag==true){ %>
+      <input class="radio" id="one" name="group" type="radio" >
+      <input class="radio" id="two" name="group" type="radio">
+      <input class="radio" id="three" name="group" type="radio"checked>
+      <% }else{ %>
+
+        <input class="radio" id="one" name="group" type="radio"checked >
+        <input class="radio" id="two" name="group" type="radio">
+        <input class="radio" id="three" name="group" type="radio">
+
+
+
+        <% } %>
+      <div class="tabs">
+      <label class="tab" id="one-tab" for="one">All Movies</label>
+      <label class="tab" id="two-tab" for="two">ADD Movie</label>
+      <label class="tab" id="three-tab" for="three">Sarch Movie</label>
+        </div>
+      <div class="panels">
+      <div class="panel" id="one-panel">
+        <div class="panel-title">All Movie</div>
+        <p> if you not see movies is beaucase you dont have prommeshon.
+        </p>
+      
+    
+    
+  
+    
+        <%  Movis.data.forEach(function(movie){ %>
+        <div class="movie_card" id="bright">
+          <div class="info_section">
+            <div class="movie_header">
+              <img class="locandina" src="<%= movie.Image %>"/>
+              <h1><%= movie.Name %></h1>
+              <h4>2017, David Ayer</h4>
+              <span class="minutes">117 min</span>
+              
+              <p class="type"><%= movie.Genres %></p>
+            </div>
+            <div class="movie_desc">
+              <div class="text">
+                <label> subscription watched</label>
+                <ul style="margin :10%;">
+
+                  <% let arr =[]%>
+                <%  arr = Sub.Data.filter(itam=>itam.movieId==movie._id)%>
+                <% arr.forEach(function(member){%>
+                  <li><a href="" ><%= member.memberName   %></a><label style="margin-left: 20%;"><%= member.date   %></label> </li>
+              
+                  <% })%>
+                </ul>
+              </div>
+            </div>
+            <div class="movie_social">
+              <% if(Pro.includes("Delete Movies")&Pro.includes("Update Movies")){%>
+              <ul>
+                <% let movieName=movie.Name.replace(/\s+/g, '');  %>
+                <li><a href="http://localhost:8000/TestMoviePage/EditDataMovie/<%=  movieName %>">Edit</a></li>
+                <li><a href="http://localhost:8000/TestMoviePage/DaleteMovie/<%=movie._id %>">Delete</a></li>
+               
+                <li><i class="material-icons">chat_bubble</i></li>
+              </ul>
+              <%}else if(Pro.includes("Delete Movies")){%>
+
+                <ul>
+                  <% let movieName=movie.Name.replace(/\s+/g, '');  %>
+                  <li><a href="http://localhost:8000/TestMoviePage/DaleteMovie/<%=movie._id %>">Delete</a></li>
+                 
+                  <li><i class="material-icons">chat_bubble</i></li>
+                </ul>
+
+
+
+
+                <%}else if(Pro.includes("Update Movies")){%>
+
+
+                  <ul>
+                    <% let movieName=movie.Name.replace(/\s+/g, '');  %>
+                    <li><a href="http://localhost:8000/TestMoviePage/EditDataMovie/<%=  movieName %>">Edit</a></li>
+                   
+                    <li><i class="material-icons">chat_bubble</i></li>
+                  </ul>
+
+
+
+                  <%}else{%>
+
+
+
+
+
+                    <%}%>
+            </div>
+          </div>
+          <div class="blur_back " style= "background:url(<%=movie.Image%>)" ></div>
+        </div>
+  
+
+      
+        <% }) %>
+
+
+
+
+      <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+
+                 
+
+
+
+      </div>
+      
+      <div class="panel" id="two-panel">
+        <div class="panel-title">Create New Movie</div>
+        <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <% if(Pro.includes("Create Movies")){%>
+        <p>You will learn many aspects of styling web pages! You’ll be able to set up the correct file structure, edit text and colors, and create attractive layouts. With these skills, you’ll be able to customize the appearance of your web pages to suit your every need!</p>
+          <form action="/TestMoviePage/AddMovies" method="POST">
+
+            <label>Name :</label> <input type="text" name="Name"><br>
+            <label>Ganer:</label> <input type="text" name="Ganer"><br>
+            <label>Imag url :</label> <input type="text" name ="Image"><br>
+            <label>Pramire :</label> <input type="text" name="Pramire"><br>
+            <input type="submit" value="save">
+          
+          </form>
+          <input type="button" value="cencel">
+           <% }else{%>
+
+            <p>no prommishen to Add Movie</p>
+
+            <%}%>
+
+
+     
+             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+      </div>
+      <div class="panel" id="three-panel">
+        <div class="panel-title">Note on Prerequisites</div>
+        <p>We recommend that you complete Learn HTML before learning CSS.</p>
+        <% if(sarchSbmitFlag==true){ %>
+
+        <form action="/TestMoviePage/SerchMovies:inputSarch" method="GET">
+            <input  type="text"  name="inputSarch" >
+            <input type="submit" value="Serche"  >
+      
+          </form>TestMoviePage
+          <% }else{  %>
+            <form action="TestMoviePage/SerchMovies:inputSarch" method="GET">
+              <input  type="text"  name="inputSarch" >
+              <input type="submit" value="Serche"  >
+        
+            </form>
+
+
+
+            <% } %>
+
+          <% if(sarchSbmitFlag==true){ %>
+          <table border="1" >
+            <thead>
+              <tr><th>Name Movie</th><th>Imeg</th><th>suggestion</th>
+      
+            </thead>
+           
+            <%  SarchRezolt.forEach(function(movie){ %>
+              <tbody>
+                    <tr>
+                        <td><%= movie.Name %></td>
+                        <%  if(movie.Image){ %>
+                        <td> <img src="<%= movie.Image %>" ></td>
+                        <% }else{  %>
+      
+                        <td></td>
+                        <% }  %>
+      
+      
+      
+                        <td></td>
+       
+           
+                        <% }) %>
+                    </tr>
+                    <% } %>
+              </tbody>
+          </table>
+    
+        
+      </div>
+      </div>
+    </div>
+    
+
+
+
+</body>
+
+
+
+
+
+</html>
+

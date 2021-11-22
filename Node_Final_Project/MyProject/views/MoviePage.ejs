@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    
+    <h1>Movies</h1>
+    <div>
+
+      <form action="MoviePage/AllMovies" method="GET">
+        <input  type="submit" value="All Movies" >
+  
+      </form>
+      <form action="MoviePage/AllMovies" method="GET">
+        <input  type="submit" value="Add Movie" >
+  
+      </form>
+    </form>
+    <form action="MoviePage/AllMovies" method="GET">
+      <input  type="text"   >
+      <input type="submit" value="Serche"  >
+
+    </form>
+      
+     
+     
+
+
+    </div>
+  
+   
+      <table border="1" >
+        <thead>
+          <tr><th>Name Movie</th><th>Imeg</th><th>suggestion</th>
+  
+        </thead>
+       
+        <%  Movis.data.forEach(function(movie){ %>
+          <thead>
+                <tr>
+                    <td><%= movie.Name %></td>
+                    <%  if(movie.Image){ %>
+                    <td> <img src="<%= movie.Image %>" ></td>
+                    <% }else{  %>
+  
+                    <td></td>
+                    <% }  %>
+  
+  
+  
+                    <td></td>
+   
+       
+                    <% }) %>
+  <% } %>
+
+  </body>
+</html>
